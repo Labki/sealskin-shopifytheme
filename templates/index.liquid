@@ -1,0 +1,52 @@
+<div class="mainwrapper">
+  <div class="bghomepage">
+    <div class="company-info">
+      <div class="company-details">
+        <ul class="details-list">
+          <li class="c-details-item">
+            <h2 class="details-title">The Cover That Cares. Feel The Difference.</h2>
+          </li>
+          <li class="c-details-item">
+            <span class="details-subtitle">400,000 Verified Customers. Established in 2005, 95K+ Reviews.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="company-number">
+        <a
+          href="tel:800-915-0038"
+          class="callbtn"
+          tabindex="0">Call Now 800-915-0038</a>
+      </div>
+    </div>
+    <div class="bgoverlay"></div>
+  </div>
+  <main>
+    <div id="promotionlist" class="promotion_list"></div>
+    {% assign pageobject = pages['home-page'].metafields.pageobject.pageJSONobject %}
+    <script>
+      var pageObject = JSON.parse('{{ pageobject }}');
+      var promotionlist = $("#promotionlist");
+      var htmlForPromoList = '';
+      var imageLinks = {
+        "medal": "{{ 'medal.svg' | asset_url }}",
+        "piggybank": "{{ 'piggybank.svg' | asset_url }}",
+        "snugfit": "{{ 'snugfit.svg' | asset_url }}",
+        "umbrella": "{{ 'umbrella.svg' | asset_url }}"
+      };
+
+      pageObject[0].elements.forEach((element) => {
+        htmlForPromoList += '<div class="promoelement_wrapper"><div class="promelement_icon"><img src="' + imageLinks[element.icon] + '" /></div>';
+        htmlForPromoList += '<div class="promelement_text"><h4>' + element.title + '</h4><p>' + element.subtitle + '</p></div></div>'
+      });
+      promotionlist.html(htmlForPromoList);
+    </script>
+
+    <div class="boatbg">
+      <div class="boat_text"></div>
+      <div class="boat_collections"></div>
+      <div class="boatbgoverlay"></div>
+    </div>
+
+
+  </main>
+</div>
