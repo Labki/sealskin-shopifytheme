@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none !important;
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/*#Region General Main*/
+.mainwrapper {
+  width: 100%;
+  background-color: #f2f5f7;
+  /*font-family: {{ settings.content_font.family }}
+  , {{ settings.content_font.fallback_families }}
+  ;*/
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 26px;
+  font-size: 16px;
+}
+
+main {
+  width: 1210px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+/*#EndRegion General Main*/
+
+/*#Region Company Details*/
+.saleimage {
+  width: 100%;
+}
+
+.bghomepage {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 0;
+  height: 300px;
+  margin-top: -55px;
+  z-index: 0;
+  width: 100%;
+  background-image: url('{{ 'bg-homepage.webp' | asset_url }}');
+  background-size: cover;
+  background-position: center center;
+}
+
+.bgoverlay {
+  background-color: #3d4246;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.company-info {
+  position: relative;
+  z-index: 1;
+  width: 1210px;
+  margin: 0 auto;
+  color: white;
+  padding: 0 15px;
+}
+
+.c-details-item {
+  list-style-type: none;
+}
+.company-number a {
+  text-decoration: none;
+}
+
+.details-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.details-subtitle {
+  font-family: Prompt, sans-serif;
+  text-shadow: 0 0 4px rgb(0 0 0 / 40%);
+  margin: auto 0;
+}
+.company-number {
+  display: flex;
+  margin-top: 20px;
+}
+
+.callbtn {
+  background: #f26101;
+  text-transform: capitalilze;
+  letter-spacing: 0;
+  padding: 8px 50px;
+  line-height: 20px;
+  font-weight: 700;
+  border: 2px solid #f26101;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+  color: #3b3b3b;
+}
+.callbtn:hover {
+  color: #fff;
+  background-color: #bf4d01;
+  border: 2px solid #bf4d01;
+}
+/*#EndRegion Company Details*/
+
+/*#Region Promotion List*/
+.promotion_list {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 32px 30px;
+  box-shadow: 0 0 1px #0003;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  margin-top: -69px;
+}
+.promoelement_wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.promelement_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background: #00344e;
+  text-align: center;
+  line-height: 36px;
+}
+.promelement_text {
+  padding-left: 15px;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 500;
+  color: {{ settings.blueish }}
+  ;
+}
+.promelement_text h4 {
+  font-size: 14px;
+}
+
+.boatbg,
+.boatbgoverlay {
+  border-radius: 0 5px 0 5px;
+  width: 100%;
+}
+
+.boatbg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url('{{ 'homepageboatbg.webp' | asset_url }}');
+  background-size: cover;
+  background-position: center center;
+  height: 800px;
+}
+
+.boatbgoverlay {
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  height: 100%;
+  top: 0;
+}
+
+
+/*#EndRegion Promotion List*/

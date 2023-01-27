@@ -1,0 +1,107 @@
+/*#Region General*/
+.header,
+.header-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo,
+.header-links {
+  display: inline-block;
+  vertical-align: middle;
+}
+/*#EndRegion General*/
+
+/*#Region Header*/
+.headerwrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 0 0 3px #0006;
+  background-color: white;
+}
+header {
+  font-family: 'Kanit', sans-serif;
+  width: 1240px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+.container {
+  padding: 0 15px;
+}
+/*#EndRegion Header*/
+
+/*#Region Navbar-Logo*/
+#sealskincoverlogo {
+  max-width: 200px;
+}
+/*#EndRegion Navbar-Logo*/
+
+/*#Region Navbar-Links*/
+.header-links ul li {
+  list-style-type: none;
+  padding: 5px 14px;
+}
+.header-links ul li a {
+  text-decoration: none;
+  color: {{ settings.blueish }}
+  ;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+}
+.header-links {
+  padding: 0 65px 0 30px;
+}
+
+/*#EndRegion Navbar-Links*/
+
+/*#region header-icons*/
+.header-icons {
+  display: inline-flex;
+  height: 49px;
+  margin-bottom: -2px;
+}
+
+#telephoneicon {
+  background-color: {{ settings.yellowish }}
+  ;
+  border-radius: 50px 0 0 50px;
+  color: {{ settings.blueish }}
+  ;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  padding: 5px 15px 5px 10px;
+}
+
+#telephoneicon img {
+  width: 40px;
+}
+
+#telephoneicon p {
+  padding-left: 5px;
+}
+
+#carticon {
+  background-color: {{ settings.blueish }}
+  ;
+  border-radius: 0 50px 50px 0;
+  color: white;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  padding: 5px 20px 5px 10px;
+}
+
+#carticon img {
+  margin-bottom: -5px;
+  height: 40px;
+}
+
+#carticon p {
+  padding-left: 5px;
+}
+/*#endregion header-icons*/
