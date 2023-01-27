@@ -1,0 +1,40 @@
+{{ 'headerstyle.css' | asset_url | stylesheet_tag }}
+<div class="headerwrapper">
+  <header>
+    <div class="container">
+      <nav class="header">
+        <div class="navbar">
+          <div class="header-logo">
+            <a href="/">
+              <img id="sealskincoverlogo" src="{{ 'logo-sealskincovers.avif' | asset_url }}" />
+            </a>
+          </div>
+          <div class="header-links">
+            <ul class="navbar-list">
+              {% for link in linklists.main-menu.links -%}
+                <li class="navbar-item">{{ link.title | link_to: link.url }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="header-icons">
+          <div id="telephoneicon">
+            <img src="{{ 'telephoneicon.svg' | asset_url }}" />
+            <p>800-915-0038</p>
+          </div>
+          <div id="carticon">
+            <img src="{{ 'carticon.svg' | asset_url }}" />
+            <p>Cart</p>
+          </div>
+        </div>
+      </nav>
+    </div>
+    {% if settings.show_search %}
+      <form action="/search">
+        <input type="search" name="q">
+        <button type="submit">Search</button>
+      </form>
+    {% endif %}
+  </header>
+</div>

@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Typography",
+        "settings": [
+            {
+                "type": "font_picker",
+                "id": "content_font",
+                "label": "Content font",
+                "default": "helvetica_n4"
+            }
+        ]
+    },
+    {
+        "name": "Colors",
+        "settings": [
+            {
+                "type": "color",
+                "id": "blueish",
+                "label": "Blue Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "color",
+                "id": "yellowish",
+                "label": "Yellow Color",
+                "default": "#000000"
+            }
+        ]
+    },
+    {
+        "name": "Settings",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "show_search",
+                "label": "Show search form?",
+                "default": true            
+            }
+        ]
+    }
+]
