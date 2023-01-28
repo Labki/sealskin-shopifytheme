@@ -1,0 +1,17 @@
+{% assign reviews = product.metafields.starsrating.stars.value %}
+{% if reviews %}
+  <style>
+    .fa-star {
+      color: #f26101;
+    }
+  </style>
+  {% assign rating = reviews.rating | round %}
+  {% assign max = reviews.scale_max | round %}
+  {% for i in (1..max) %}
+    {% if i <= rating %}
+      <i class="fa-solid fa-star"></i>
+    {% else %}
+      <i class="fa-regular fa-star"></i>
+    {% endif %}
+  {% endfor %}
+{% endif %}
