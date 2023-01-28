@@ -6,7 +6,7 @@
       <div class="collheader">
         <div class="titletext">
           <p>We have {{ collection.products | size }} items that fits your</p>
-          <h4>{{ collection.metafields.subhead.subheader.value }}</h3>
+          <h3>{{ collection.metafields.subhead.subheader.value }}</h3>
         </div>
         <div class="backtosearch">
           <a href="/">← Back to search</a>
@@ -14,11 +14,10 @@
       </div>
     </div>
     <div class="maincontainer">
-      {% paginate collection.products by 4 %}
+      {% paginate collection.products by 5 %}
         {% for product in collection.products %}
           {% render 'product-item', product: product %}
         {% endfor %}
-
         {{ paginate | default_pagination }}
       {% endpaginate %}
     </div>
