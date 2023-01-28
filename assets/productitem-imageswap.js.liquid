@@ -1,0 +1,13 @@
+function changeImage(img) {
+    var currentImage = document.getElementById('prodimgcurrent');
+    var newImage = img.getAttribute('data-image');
+    var newImageShopifyId = img.getAttribute('data-imageshopifyid');
+    if(currentImage.getAttribute('data-imageshopifyid') != newImageShopifyId) {
+        currentImage.setAttribute("data-imageshopifyid", newImageShopifyId);
+        currentImage.classList.add("image-fade-out");
+        setTimeout(function() {
+          currentImage.src = newImage;
+          currentImage.classList.remove("image-fade-out");
+        }, 300);
+    }
+  }

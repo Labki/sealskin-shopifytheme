@@ -2,12 +2,13 @@
     <div class="product-wrapper">
         <div class="product-images">
             <div class="displayed-image">
-                <img src="{{ product.images.first | image_url: width: 400 }}"/>
+                <img id="prodimgcurrent" data-imageshopifyid="{{ product.images.first.id }}" src="{{ product.images.first | image_url: width: 400 }}" />
+                {{ 'productitem-imageswap.js' | asset_url | script_tag }}
             </div>
             <div class="imgselector">
                 {% for image in product.images %}
                     <div class="imgbutton">
-                        <img src="{{ image | image_url: width: 35 }}"/>
+                        <img class="prodimgthumb" data-imageshopifyid="{{ image.id }}" src="{{ image | image_url: width: 35 }}"  onclick="changeImage(this)" data-image="{{ image | image_url: width: 400 }}"/>
                     </div>
                 {% endfor %}
             </div>
@@ -22,11 +23,26 @@
                         </a>
                     </div>    
                     <div class="prod-price-rating">
-                        <p>{{ product.price | money }}<p>
+                        <p><span>{% render 'product-rating.liquid', product: product %}</span><span style="padding-left: 5px;"> EUR {{ product.price | money }}</span><p>
                     </div>
                     <div class="prod-shipment">
-                        <div class="shipping-details"></div>
-                        <div class="prod-to-cart"></div>
+                        <div class="shipping-details">
+                            {% assign prodspecs = product.metafields.specs %}
+                            <p class="regularprice">Regular Price: <span>{{ prodspecs.regularprice.value | money }}</span></p>
+                            <p class="shippingfee"><span>Shipping: </span>
+                                {% if prodspecs.shippingfee.value == 0 %}
+                                   <span>FREE</span> 
+                                {% else %}
+                                    <span>{{ prodspecs.shippingfee.value }}</span>
+                                {% endif %}
+                            </p>
+                            <p class="shippingtime">{{ prodspecs.shippingtime.value }}</p>
+                        </div>
+                        <div class="prod-to-cart">
+                            {% form 'product', product %}
+                                <button type="submit">Add to Cart</button>
+                            {% endform %}
+                        </div>
                     </div>
                 </div>
                 <div class="prod-comments-wrapper"></div>
