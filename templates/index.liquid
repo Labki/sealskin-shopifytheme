@@ -1,3 +1,4 @@
+{{ 'index.css' | asset_url | stylesheet_tag }}
 <div class="mainwrapper">
   <div class="bghomepage">
     <div class="company-info">
@@ -61,9 +62,15 @@
                 <div class="collcontainer">
                   <div class="collwrapper" style="height: 462.312px;">
                     <div class="collection">
-                      <div class="collectionimage"><img src="{{ collproduct.featured_image | image_url: width: 250 }}" /></div>
+                      <div class="collectionimage">
+                        <a href="{{ collection.url }}">
+                          <img src="{{ collproduct.featured_image | image_url: width: 250 }}" />
+                        </a>
+                      </div>
                       <div class="collectiontitle">
-                        <h5 class="colltitle">{{ collproduct.title }}</h5>
+                        <a href="{{ collection.url }}">
+                          <h5 class="colltitle">{{ collproduct.title }}</h5>
+                        </a>
                       </div>
                       <div class="collectiondetails">
                         <div class="collprodrating">
