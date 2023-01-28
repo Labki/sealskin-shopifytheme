@@ -93,7 +93,10 @@ main {
   margin-top: 20px;
 }
 
-.callbtn {
+/*#EndRegion Company Details*/
+
+/*#Region Link Buttons*/
+.orangebtn {
   background: #f26101;
   text-transform: capitalilze;
   letter-spacing: 0;
@@ -103,6 +106,9 @@ main {
   border: 2px solid #f26101;
   border-radius: 2px;
   transition: all 0.2s ease-in-out;
+}
+
+.callbtn {
   color: #3b3b3b;
 }
 .callbtn:hover {
@@ -110,7 +116,32 @@ main {
   background-color: #bf4d01;
   border: 2px solid #bf4d01;
 }
-/*#EndRegion Company Details*/
+
+.shopbtn {
+  display: block;
+  text-align: center;
+  color: #fff;
+  width: 150px;
+}
+.shopbtn:hover {
+  background-color: #bf4d01;
+  border: 2px solid #bf4d01;
+}
+
+.collbtn {
+  padding: 5px;
+  color: #fff;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+}
+
+.collbtn:hover {
+  background-color: #bf4d01;
+  border: 2px solid #bf4d01;
+}
+/*#EndRegion Link Buttons*/
 
 /*#Region Promotion List*/
 .promotion_list {
@@ -157,13 +188,13 @@ main {
   font-size: 14px;
 }
 
-.boatbg,
-.boatbgoverlay {
-  border-radius: 0 5px 0 5px;
-  width: 100%;
+.collectionbg,
+.collectionbgoverlay {
+  border-radius: 0 0 5px 5px;
 }
 
-.boatbg {
+.collectionbg {
+  padding: 0 30px 0 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,15 +203,100 @@ main {
   background-size: cover;
   background-position: center center;
   height: 800px;
+  color: #fff;
+  width: calc(100% - 80px);
 }
 
-.boatbgoverlay {
+.collectionbgoverlay {
   background-color: #000;
   opacity: 0.5;
   position: absolute;
   height: 100%;
+  width: 100%;
   top: 0;
+  left: 0;
 }
 
+.collection_shop,
+.allcollcontainer {
+  position: relative;
+  z-index: 2;
+}
 
+.collection_shop {
+  width: 40%;
+  margin-top: 18%;
+}
+
+.collectiontextcontainer h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.collectiontextcontainer p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.allcollcontainer {
+  align-self: flex-start;
+  width: 60%;
+  height: 100%;
+}
+
+.allcollwrapper {
+  padding: 14px 0 0 80px;
+}
+
+.allcollections {
+  padding: 12px 0 0 8px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.collcontainer {
+  padding: 0 9.5px;
+}
+.collwrapper {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  width: 100%;
+  float: left;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 0 2px #0003;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.collection {
+  position: relative;
+  height: 100%;
+}
+
+.collectiontitle {
+  margin-top: 30px;
+}
+
+.colltitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3b3b3b;
+}
+
+.collectiondetails {
+  color: #3b3b3b;
+}
+
+.collectionlink {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
 /*#EndRegion Promotion List*/

@@ -14,7 +14,7 @@
       <div class="company-number">
         <a
           href="tel:800-915-0038"
-          class="callbtn"
+          class="orangebtn callbtn"
           tabindex="0">Call Now 800-915-0038</a>
       </div>
     </div>
@@ -41,12 +41,55 @@
       promotionlist.html(htmlForPromoList);
     </script>
 
-    <div class="boatbg">
-      <div class="boat_text"></div>
-      <div class="boat_collections"></div>
-      <div class="boatbgoverlay"></div>
+    <div class="collectionbg">
+      <div class="collection_shop">
+        <div class="collectiontextcontainer">
+          <h2>Guaranteed Fit Covers</h2>
+          <p>Love your boat or car? Throw away that cheap tarp and give your pride and joy the protection it deserves. 
+            Select the perfect cover for your vehicle.</p>
+        </div>
+        <div class="shopbtncontainer">
+          <a class="orangebtn shopbtn" href="/">Shop Now</a>
+        </div>
+      </div>
+      <div class="allcollcontainer">
+        <div class="allcollwrapper">
+          <div class="allcollections">
+            {% for collection in collections %}
+              {% if collection.title != "All Products" %}
+                {% assign collproduct = collection.products | first %}
+                <div class="collcontainer">
+                  <div class="collwrapper" style="height: 462.312px;">
+                    <div class="collection">
+                      <div class="collectionimage"><img src="{{ collproduct.featured_image | image_url: width: 250 }}" /></div>
+                      <div class="collectiontitle">
+                        <h5 class="colltitle">{{ collproduct.title }}</h5>
+                      </div>
+                      <div class="collectiondetails">
+                        <div class="collprodrating">
+                          {% render "product-rating", product: collproduct %}
+                        </div>
+                        <div class="collprodprice">
+                          <p class="pricetext">
+                            <b>{{ collproduct.price | money }}</b>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="collectionlink">
+                        <a class="orangebtn collbtn" href="{{ collection.url }}">
+                          {{ collection.title }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="collectionbgoverlay"></div>
     </div>
-
 
   </main>
 </div>
