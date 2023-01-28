@@ -1,8 +1,36 @@
-<div>
-    <a class="product_link" href="{{ product.url }}">
-        <img src="{{ product.featured_image | image_url: width: 400 }}"/>
-        <h3>{{ product.title }}<h3>
-    </a>
-    <p>{{ product.price | money }}<p>
-    <p>i have to modify this</p>
+<div class="product-container">
+    <div class="product-wrapper">
+        <div class="product-images">
+            <div class="displayed-image">
+                <img src="{{ product.images.first | image_url: width: 400 }}"/>
+            </div>
+            <div class="imgselector">
+                {% for image in product.images %}
+                    <div class="imgbutton">
+                        <img src="{{ image | image_url: width: 35 }}"/>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="product-details">
+            <p class="product-Subheader">{{ collection.metafields.subhead.subheader.value }}</p>    
+            <div class="prod-details-wrapper">
+                <div class="prod-details">
+                    <div class="prod-title">
+                        <a class="product_link" href="{{ product.url }}">    
+                            <h3>{{ product.title }}</h3>
+                        </a>
+                    </div>    
+                    <div class="prod-price-rating">
+                        <p>{{ product.price | money }}<p>
+                    </div>
+                    <div class="prod-shipment">
+                        <div class="shipping-details"></div>
+                        <div class="prod-to-cart"></div>
+                    </div>
+                </div>
+                <div class="prod-comments-wrapper"></div>
+            </div>
+        </div>
+    </div>
 </div>
