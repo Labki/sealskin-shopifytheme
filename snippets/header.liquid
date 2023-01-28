@@ -19,14 +19,18 @@
         </div>
 
         <div class="header-icons">
-          <div id="telephoneicon">
-            <img src="{{ 'telephoneicon.svg' | asset_url }}" />
-            <p>800-915-0038</p>
-          </div>
-          <div id="carticon">
-            <img src="{{ 'carticon.svg' | asset_url }}" />
-            <p>Cart</p>
-          </div>
+          <a href="tel:800-915-0038" tabindex="0">
+            <div id="telephoneicon">
+              <img src="{{ 'telephoneicon.svg' | asset_url }}" />
+              <p>800-915-0038</p>
+            </div>
+          </a>
+          <a href="/cart">
+            <div id="carticon">
+              <img src="{{ 'carticon.svg' | asset_url }}" />
+              <p>Cart</p>
+            </div>
+          </a>
         </div>
       </nav>
     </div>
