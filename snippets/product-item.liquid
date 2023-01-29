@@ -45,7 +45,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="prod-comments-wrapper"></div>
+                <div class="prod-comments-wrapper">
+                    {{ 'feedbackslider.js' | asset_url | script_tag }}
+                    <div id="commentcontainer">
+                       <div id="commentwrapper" style="width: calc(100% * {{ product.metafields.specs.feedback.value | size }});">
+                            {% for feedbackItem in product.metafields.specs.feedback.value %}
+                                <div class="comment">
+                                    <p>{{ feedbackItem }}</p>
+                                </div>
+                            {% endfor %}
+                       </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
