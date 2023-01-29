@@ -179,6 +179,7 @@
 #commentcontainer,
 #commentauthorcontainer {
   overflow: auto;
+  scroll-snap-type: x mandatory;
 }
 
 #commentauthorcontainer::-webkit-scrollbar,
@@ -194,6 +195,7 @@
 .comment,
 .commentauthor {
   width: 100%;
+  scroll-snap-align: center;
 }
 
 .comment p {
@@ -212,7 +214,7 @@
 }
 
 #authors {
-  width: 25%;
+  width: 30%;
   position: relative;
 }
 
@@ -229,7 +231,7 @@
 
 .commentauthor {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
 }
 
 .commentauthor p {
@@ -238,10 +240,11 @@
 }
 
 .authorimg {
+  margin: 0 7px;
   height: 100%;
+  width: 26px;
   background-color: #444;
   border-radius: 50%;
-  width: 26px;
   border: 2px solid #f26101;
   box-sizing: border-box;
 }
