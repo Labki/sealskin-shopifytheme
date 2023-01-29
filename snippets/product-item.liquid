@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="prod-comments-wrapper">
-                    {{ 'feedbackslider.js' | asset_url | script_tag }}
+                    {{ 'feedbackcommentslider.js' | asset_url | script_tag }}
                     <div id="commentcontainer">
                        <div id="commentwrapper" style="width: calc(100% * {{ product.metafields.specs.feedback.value | size }});">
                             {% for feedbackItem in product.metafields.specs.feedback.value %}
@@ -55,6 +55,28 @@
                                 </div>
                             {% endfor %}
                        </div>
+                    </div>
+                    <div class="author-slidebtns">
+                        <div id="authors">
+                            <div id="commentauthorcontainer">
+                                <div id="commentauthorwrapper" style="width: calc(100% * {{ product.metafields.specs.feedbackauthor.value | size }});">
+                                    {% for fbauthor in product.metafields.specs.feedbackauthor.value %}
+                                        <div class="commentauthor">
+                                            <div class="authorimg"></div>
+                                            <p>{{ fbauthor }}</p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slidebtns">
+                            <div id="cmntslideleft" class="disabledarrow">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </div>
+                            <div id="cmntslideright">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
