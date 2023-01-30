@@ -1,5 +1,5 @@
 function changeImage(img) {
-    var currentImage = document.getElementById('prodimgcurrent');
+    var currentImage = img.parentNode.parentNode.parentNode.querySelector('.prodimgcurrent');
     var newImage = img.getAttribute('data-image');
     var newImageShopifyId = img.getAttribute('data-imageshopifyid');
     if(currentImage.getAttribute('data-imageshopifyid') != newImageShopifyId) {
