@@ -1,16 +1,18 @@
 $(function () {
-    var leftArrow = $('#cmntslideleft');
-    var rightArrow = $('#cmntslideright');
+    var leftArrow = $('.cmntslideleft');
+    var rightArrow = $('.cmntslideright');
     
     leftArrow.click(function() {
-        var commentcontainer = $('#commentcontainer'), authorcontainer = $('#commentauthorcontainer');
+        var feedbackcontainer = $(this).parent().parent().parent();
+        var commentcontainer = feedbackcontainer.find('.commentcontainer'), authorcontainer = feedbackcontainer.find('.commentauthorcontainer');
         var currentComScroll = commentcontainer.scrollLeft(), currentAScroll = authorcontainer.scrollLeft();
         var newComScroll = Math.round(currentComScroll - commentcontainer.width()), newAScroll = Math.round(currentAScroll - authorcontainer.width());
         commentcontainer.scrollLeft(newComScroll);
         authorcontainer.scrollLeft(newAScroll);
     });
     rightArrow.click(function(){
-        var commentcontainer = $('#commentcontainer'), authorcontainer = $('#commentauthorcontainer');
+        var feedbackcontainer = $(this).parent().parent().parent();
+        var commentcontainer = feedbackcontainer.find('.commentcontainer'), authorcontainer = feedbackcontainer.find('.commentauthorcontainer');
         var currentComScroll = commentcontainer.scrollLeft(), currentAScroll = authorcontainer.scrollLeft();
         var newComScroll = Math.round(currentComScroll + commentcontainer.width()), newAScroll = Math.round(currentAScroll + authorcontainer.width());
         commentcontainer.scrollLeft(newComScroll);

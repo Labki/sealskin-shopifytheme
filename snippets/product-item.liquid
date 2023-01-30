@@ -2,7 +2,7 @@
     <div class="product-wrapper">
         <div class="product-images">
             <div class="displayed-image">
-                <img id="prodimgcurrent" data-imageshopifyid="{{ product.images.first.id }}" src="{{ product.images.first | image_url: width: 400 }}" />
+                <img class="prodimgcurrent" data-imageshopifyid="{{ product.images.first.id }}" src="{{ product.images.first | image_url: width: 400 }}" />
                 {{ 'productitem-imageswap.js' | asset_url | script_tag }}
             </div>
             <div class="imgselector">
@@ -33,7 +33,7 @@
                                 {% if prodspecs.shippingfee.value == 0 %}
                                    <span>FREE</span> 
                                 {% else %}
-                                    <span>{{ prodspecs.shippingfee.value }}</span>
+                                    <span>{{ prodspecs.shippingfee.value | money }}</span>
                                 {% endif %}
                             </p>
                             <p class="shippingtime">{{ prodspecs.shippingtime.value }}</p>
@@ -47,8 +47,8 @@
                 </div>
                 <div class="prod-comments-wrapper">
                     {{ 'feedbackcommentslider.js' | asset_url | script_tag }}
-                    <div id="commentcontainer">
-                       <div id="commentwrapper" style="width: calc(100% * {{ product.metafields.specs.feedback.value | size }});">
+                    <div class="commentcontainer">
+                       <div class="commentwrapper" style="width: calc(100% * {{ product.metafields.specs.feedback.value | size }});">
                             {% for feedbackItem in product.metafields.specs.feedback.value %}
                                 <div class="comment">
                                     <p>{{ feedbackItem }}</p>
@@ -57,9 +57,9 @@
                        </div>
                     </div>
                     <div class="author-slidebtns">
-                        <div id="authors">
-                            <div id="commentauthorcontainer">
-                                <div id="commentauthorwrapper" style="width: calc(100% * {{ product.metafields.specs.feedbackauthor.value | size }});">
+                        <div class="authors">
+                            <div class="commentauthorcontainer">
+                                <div class="commentauthorwrapper" style="width: calc(100% * {{ product.metafields.specs.feedbackauthor.value | size }});">
                                     {% for fbauthor in product.metafields.specs.feedbackauthor.value %}
                                         <div class="commentauthor">
                                             <div class="authorimg"></div>
@@ -70,10 +70,10 @@
                             </div>
                         </div>
                         <div class="slidebtns">
-                            <div id="cmntslideleft">
+                            <div class="cmntslideleft">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </div>
-                            <div id="cmntslideright">
+                            <div class="cmntslideright">
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
                         </div>
